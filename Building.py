@@ -6,12 +6,12 @@ from Floor import *
 
 
 class Building(pygame.sprite.Group):
-    def __init__(self, position):
+    def __init__(self, x_position):
         super().__init__()
         self.floors = []
         self.elevators = []
 
-        self.position = (SCREEN_WIDTH // 2 - FLOOR_WIDTH // 2, SCREEN_HEIGHT)
+        self.position = (x_position, SCREEN_HEIGHT)
 
         self.create_floors()
         self.create_elevators()

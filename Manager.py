@@ -20,8 +20,9 @@ class Manager(pygame.sprite.Sprite):
 
     def create_buildings(self):
         for building_num in range(NUMBER_OF_BUILDING):
-            building = Building(position=(SCREEN_WIDTH // 2, SCREEN_HEIGHT // 2))
-            building_id = building_num
+            x_position = FLOOR_WIDTH // 2 + building_num * (FLOOR_WIDTH + BUILDING_SPACING)
+            building = Building(x_position=x_position)
+            #building_id = building_num
             self.buildings.append(building)
             self.add(building)
 

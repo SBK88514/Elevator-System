@@ -8,5 +8,5 @@ class Floor(pygame.sprite.Group):
         self.image = FLOOR_SCALE
         self.rect = self.image.get_rect(midbottom=position)
 
-    def create(self):
+    def create_button(self):
         pass
