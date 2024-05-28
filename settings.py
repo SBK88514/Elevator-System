@@ -1,8 +1,9 @@
 import pygame
 
-SCREEN_WIDTH: int = 880
-SCREEN_HEIGHT: int = 550
+SCREEN_WIDTH: int = 1200
+SCREEN_HEIGHT: int = 600
 SCREEN = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+pygame.display.set_caption("Elevator Challenge")
 
 FLOOR_WIDTH = 100
 FLOOR_HEIGHT = 40
@@ -24,10 +25,7 @@ NUMBER_OF_ELEVATORS = 3
 BUILDING_SPACING = 100
 
 FPS = 60
-
-# BACKGROUND_IMAGE = pygame.image.load()
-# BACKGROUND_SIZE = SCREEN_WIDTH, SCREEN_HEIGHT
-# BACKGROUND_SCALE = pygame.transform.scale(BACKGROUND_IMAGE, BACKGROUND_SIZE)
+SPEED = 1
 
 FLOOR_IMAGE = pygame.image.load("audio_and_images/floor.png")
 FLOOR_SIZE = FLOOR_WIDTH, FLOOR_HEIGHT
@@ -38,4 +36,3 @@ ELEVATOR_SIZE = ELEVATOR_WIDTH, ELEVATOR_HEIGHT
 ELEVATOR_SCALE = pygame.transform.scale(ELEVATOR_IMAGE, ELEVATOR_SIZE)
 
 TIMER_FONT_SIZE = 24
-

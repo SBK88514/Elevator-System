@@ -4,7 +4,6 @@ from settings import SCREEN
 
 manager = Manager.Manager()
 
-
 running = True
 
 # Main loop
@@ -16,7 +15,7 @@ while running:
             running = False
         if event.type == pygame.MOUSEBUTTONDOWN:
             mouse_pos = pygame.mouse.get_pos()
-            manager.check_click(mouse_pos)
+            manager.check_click_building(mouse_pos)
 
     SCREEN.fill((0, 0, 0))
 
@@ -24,4 +23,3 @@ while running:
     pygame.display.flip()
 
 pygame.quit()
-

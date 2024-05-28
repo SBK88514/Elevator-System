@@ -6,7 +6,7 @@ from settings import TIMER_FONT_SIZE, SCREEN
 
 
 class Timer(pygame.sprite.Sprite):
-    def __init__(self, position, initial_time=0):
+    def __init__(self, position, initial_time):
         super().__init__()
         if not pygame.font.get_init():
             pygame.font.init()
@@ -15,8 +15,7 @@ class Timer(pygame.sprite.Sprite):
         self.font = pygame.font.SysFont(None, TIMER_FONT_SIZE)
         self.text = self.font.render(str(self.time_remaining), True, (255, 255, 255))
 
-    def update(self, time_remaining):
-        self.time_remaining = time_remaining
+    def update(self):
         self.text_surface = self.font.render(str(self.time_remaining), True, (255, 255, 255))
 
     def draw(self, screen):

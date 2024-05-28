@@ -17,11 +17,11 @@ class Floor(pygame.sprite.Group):
         self.button = Button(position=button_position, floor_num=self.floor_num)
 
         timer_position = (self.rect.left - 40, self.rect.centery)
-        self.timer = Timer(position=timer_position)
+        self.timer = Timer(position=timer_position, initial_time=self.time_remaining)
 
-    def update(self, time_remaining):
+    def update(self):
         self.button.update()
-        self.timer.update(time_remaining)
+        self.timer.update()
 
     def draw(self, screen):
         SCREEN.blit(self.image, self.rect)

@@ -13,15 +13,12 @@ class Manager(pygame.sprite.Sprite):
         pygame.init()
         self.clock.tick(FPS)
 
-    def check_click(self, mouse_pos):
+    def check_click_building(self, mouse_pos):
         for building in self.buildings:
             for floor in building.floors:
                 floor_clicked = floor.handle_click(mouse_pos)
                 if floor_clicked is not None:
                     building.check_faster_elevator(floor_clicked)
-
-
-
 
     def create_buildings(self):
         for building_num in range(NUMBER_OF_BUILDING):

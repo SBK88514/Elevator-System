@@ -19,8 +19,8 @@ class Button(pygame.sprite.Group):
     def draw(self, screen):
         SCREEN.blit(self.image, self.rect)
         text_surf = self.font.render(str(self.floor_num), True, (0, 0, 0))
-        text_rect = text_surf.get_rect(center= self.rect.center)
+        text_rect = text_surf.get_rect(center=self.rect.center)
         SCREEN.blit(text_surf, text_rect)
 
-    def is_clicked(self, mouse_pos):
+    def is_clicked(self, mouse_pos) -> bool:
         return self.rect.collidepoint(mouse_pos)
