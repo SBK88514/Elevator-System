@@ -21,8 +21,9 @@ class Manager(pygame.sprite.Sprite):
                     building.check_faster_elevator(floor_clicked)
 
     def create_buildings(self):
-        for building_num in range(NUMBER_OF_BUILDING):
-            x_position = FLOOR_WIDTH // 2 + building_num * (FLOOR_WIDTH + BUILDING_SPACING)
+        for building_num in range(MAX_NUMBER_OF_BUILDING):
+            x_position = (TIMER_FONT_SIZE + 30) + FLOOR_WIDTH // 2 + building_num * (
+                        TIMER_FONT_SIZE + 30 + FLOOR_WIDTH + (ELEVATOR_WIDTH * NUMBER_OF_ELEVATORS) + 5)
             building = Building(x_position=x_position)
             self.buildings.append(building)
             self.add(building)

@@ -1,4 +1,5 @@
 import pygame
+
 from Button import Button
 from Timer import Timer
 from settings import FLOOR_SCALE, NUMBER_OF_FLOORS, SCREEN, BUTTON_WIDTH, BUTTON_HEIGHT
@@ -16,7 +17,7 @@ class Floor(pygame.sprite.Group):
         button_position = (self.rect.centerx, self.rect.centery)
         self.button = Button(position=button_position, floor_num=self.floor_num)
 
-        timer_position = (self.rect.left - 40, self.rect.centery)
+        timer_position = (self.rect.left - 30, self.rect.centery)
         self.timer = Timer(position=timer_position, initial_time=self.time_remaining)
 
     def update(self):
@@ -32,3 +33,6 @@ class Floor(pygame.sprite.Group):
         if self.button.is_clicked(mouse_pos):
             return self.floor_num
         return None
+
+    def update_time(self, time_remaining):
+        self.time_remaining = time_remaining

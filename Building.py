@@ -4,6 +4,7 @@ from Floor import *
 
 
 class Building(pygame.sprite.Group):
+
     def __init__(self, x_position):
         super().__init__()
         self.floors = []
@@ -11,7 +12,7 @@ class Building(pygame.sprite.Group):
 
         self.position = (x_position, SCREEN_HEIGHT)
 
-        for floor_num in range(NUMBER_OF_FLOORS):
+        for floor_num in range(MAX_NUMBER_OF_FLOOR):
             floor = Floor(position=(self.position[0], self.position[1] - floor_num * FLOOR_HEIGHT),
                           floor_number=floor_num + 1)
             self.floors.append(floor)
@@ -45,7 +46,7 @@ class Building(pygame.sprite.Group):
         self.request_elevator(floor_clicked, closest_elevator)
         for floor in self.floors:
             if floor.floor_num == floor_clicked:
-                floor.time_remaining = min_time
+                floor.update_time(min_time)
 
     def request_elevator(self, floor_clicked, elevator):
         elevator.request(floor_clicked)
