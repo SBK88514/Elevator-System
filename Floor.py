@@ -1,12 +1,34 @@
 import pygame
-from settings import *
+from Button import Button
+from Timer import Timer
+from settings import FLOOR_SCALE, NUMBER_OF_FLOORS, SCREEN, BUTTON_WIDTH, BUTTON_HEIGHT
 
 
 class Floor(pygame.sprite.Group):
-    def __init__(self, position=None):
+
+    def __init__(self, position=None, floor_number=None):
         super().__init__()
+        self.time_remaining = 0
         self.image = FLOOR_SCALE
         self.rect = self.image.get_rect(midbottom=position)
+        self.floor_num = floor_number
 
-    def create_button(self):
-        pass
+        button_position = (self.rect.centerx, self.rect.centery)
+        self.button = Button(position=button_position, floor_num=self.floor_num)
+
+        timer_position = (self.rect.left - 40, self.rect.centery)
+        self.timer = Timer(position=timer_position)
+
+    def update(self, time_remaining):
+        self.button.update()
+        self.timer.update(time_remaining)
+
+    def draw(self, screen):
+        SCREEN.blit(self.image, self.rect)
+        self.button.draw(screen)
+        self.timer.draw(screen)
+
+    def handle_click(self, mouse_pos):
+        if self.button.is_clicked(mouse_pos):
+            return self.floor_num
+        return None
