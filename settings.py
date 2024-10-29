@@ -1,7 +1,7 @@
 import pygame
 
 SCREEN_WIDTH: int = 1200
-SCREEN_HEIGHT: int = 600
+SCREEN_HEIGHT: int = 700
 SCREEN = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 pygame.display.set_caption("Elevator Challenge")
 
@@ -13,7 +13,6 @@ ELEVATOR_HEIGHT = FLOOR_HEIGHT
 
 BUTTON_WIDTH = FLOOR_WIDTH / 5
 BUTTON_HEIGHT = FLOOR_HEIGHT / 2
-# BUTTON_RADIUS = 25
 
 LINE_WIDTH = FLOOR_WIDTH
 LINE_HEIGHT = 7

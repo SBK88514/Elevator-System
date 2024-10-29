@@ -55,3 +55,4 @@ class Building(pygame.sprite.Group):
         for floor in self.floors:
             if floor.floor_num == floor_number:
                 floor.time_remaining = 0
+                floor.timer.time_remaining = 0

@@ -23,6 +23,7 @@ class Floor(pygame.sprite.Group):
     def update(self):
         self.button.update()
         self.timer.update()
+        # self.update_time()
 
     def draw(self, screen):
         SCREEN.blit(self.image, self.rect)
@@ -36,3 +37,4 @@ class Floor(pygame.sprite.Group):
 
     def update_time(self, time_remaining):
         self.time_remaining = time_remaining
+        self.timer.time_remaining = self.time_remaining

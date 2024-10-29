@@ -16,7 +16,9 @@ class Timer(pygame.sprite.Sprite):
         self.text = self.font.render(str(self.time_remaining), True, (255, 255, 255))
 
     def update(self):
-        self.text_surface = self.font.render(str(self.time_remaining), True, (255, 255, 255))
+        if self.time_remaining > 0:
+            # print(self.position, self.time_remaining)
+            self.font.render(str(self.time_remaining), True, (255, 255, 255))
 
     def draw(self, screen):
         SCREEN.blit(self.text, self.position)
